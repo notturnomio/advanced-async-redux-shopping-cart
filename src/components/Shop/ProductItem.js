@@ -9,7 +9,11 @@ const ProductItem = (props) => {
   const { id, title, price, description } = props;
 
   const dispatch = useDispatch();
+
   const addToCartHandler = () => {
+    // and then send Http request
+    // fetch('firebase-url', { method: 'POST', body: JSON.stringify(newCart) })
+
     dispatch(cartActions.addItemToCart({ id, title, price }));
     dispatch(uiActions.openCart());
   };
